@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.numbers{
+	font-family: "Courier New", monospace;
+}
+.text{
+	font-weight: bold;
+}
+
+</style>
+<script>
+function myFunction(){
+	var timeStart = new Date("Sat Mar 12 2014 2:00:00 GMT+0700").getTime(); // set this to the date that you want it to measure from
+    var timeEnd = new Date();
+    var mDiff = timeEnd - timeStart; //in milliseconds
+    var secondDiff = Math.floor(mDiff / 1000); //in seconds
+	var minuteDiff = Math.floor(mDiff / 60 / 1000); //in minutes
+	var hourDiff = Math.floor(mDiff / 3600 / 1000); // in hours
+	var dayDiff = Math.floor(mDiff / 24 / 3600 / 1000); // in days
+	var yearDiff = Math.floor(mDiff / 365 / 24 / 3600/ 1000);
+	
+    document.getElementById("second").innerHTML = secondDiff;
+	document.getElementById("minutes").innerHTML = minuteDiff;
+	document.getElementById("hours").innerHTML = hourDiff;
+	document.getElementById("days").innerHTML = dayDiff;
+	//document.getElementById("weeks").innerHTML = secondDiff;
+	document.getElementById("years").innerHTML = yearDiff;
+}
+setInterval(myFunction, 1000);
+</script>
+</head>
+
+<body>
+
+<h1>Time Difference</h1>
+
+<div>
+<span id="years" class="numbers"></span>
+<span id="ytext" class="text">Years</span>
+</div>
+<div>
+<span id="days" class="numbers"></span>
+<span id="dtext" class="text">Days</span>
+</div>
+<div>
+<span id="hours" class="numbers"></span>
+<span id="htext" class="text">Hours</span>
+</div>
+<div>
+<span id="minutes" class="numbers"></span>
+<span id="mtext" class="text">Minutes</span>
+</div>
+<div>
+<span id="second"></span>
+<span id="stext" class="text">Seconds</span>
+</div>
+</body>
+</html> 
